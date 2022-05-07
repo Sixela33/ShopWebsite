@@ -1,0 +1,25 @@
+.container{
+    width:90%
+}
+
+.user-info {
+    width: 33%;
+    height: 100vh;
+    float:left;
+    text-align: center;
+}
+
+.items {
+    width:76%
+}
+
+@media (max-width :800px) {
+    .user-info{
+        width: 100%;
+        height: auto;
+        float: none;}
+
+        .items {
+            width: 99%;
+        }
+}

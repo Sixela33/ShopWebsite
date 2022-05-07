@@ -1,0 +1,15 @@
+ul {
+    list-style: none;
+}
+
+ul button {
+    padding: 5px auto;
+}
+
+ul li {
+    margin: 5px;
+}
+
+#description {
+    height: 2rem;
+}

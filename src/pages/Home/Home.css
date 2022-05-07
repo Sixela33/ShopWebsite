@@ -1,0 +1,12 @@
+.container{
+    width:70%
+}
+
+.HomeItem {
+    width: 20%;
+    background-color: red;
+}
+
+.thing {
+    width: 20%;
+     display: flex;}

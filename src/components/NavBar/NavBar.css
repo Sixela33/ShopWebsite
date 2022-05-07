@@ -1,0 +1,39 @@
+.header {
+    padding: 1.2rem;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 1.2rem;
+  }
+
+.item {
+  text-decoration: none;
+  font-size:1.2rem;
+  margin: 10px;
+  background: none;
+  border: none;
+  padding: 0!important;
+  color: white;
+  cursor: pointer;
+}
+
+.balance {
+  color: black;
+}
+a {
+  background-color: #1abc9c;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5em ;
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  background-color: hsl(168, 85%, 36%);
+  cursor: pointer
+}
+
+a:active {
+  background-color: hsl(168, 48%, 36%)
+}
