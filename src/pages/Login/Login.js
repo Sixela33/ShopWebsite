@@ -21,7 +21,7 @@ export const Login = ({ data, setData }) => {
   };
 
   const handleFailure = (response) => {
-    console.warn("An error has ocurred", response.json());
+    console.warn("An error has ocurred", JSON.stringify(response));
   };
 
   const handleLogout = () => {
