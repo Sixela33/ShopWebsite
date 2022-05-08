@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Item } from "../../components/ItemProfile/Item";
 import "./Home.css";
 
-export const Home = ({ data, setData }) => {
+export const Home = ({ data }) => {
   const [posts, setPosts] = useState(null);
 
+  // Gets all items (will make so htat it asks by batches)
   const getItems = async () => {
     var info = await fetch(`/items`);
     info = await info.json();

@@ -7,10 +7,11 @@ import { useParams } from "react-router-dom";
 import { NotFound } from "../NotFound/NotFound";
 
 export const Profile = ({ data }) => {
+  // Gets the user that the page should be loading
   const { id } = useParams();
-
   const [profileInfo, setProfileInfo] = useState();
 
+  //fetches the user's data from the backend
   const getUserData = async () => {
     var info = await fetch(`/items/${id}`);
     info = await info.json();
@@ -24,6 +25,8 @@ export const Profile = ({ data }) => {
     getUserData();
   }, []);
 
+  // IF the app has the profile info, it renders it
+  //If not, the "Not found page is shown"
   if (profileInfo) {
     return (
       <>
@@ -32,7 +35,7 @@ export const Profile = ({ data }) => {
           <div className="items">
             {data ? <ItemForm data={data} /> : <span></span>}
 
-            <h1>Your Items</h1>
+            <h1>User Items</h1>
             <div>
               {profileInfo.items.map((item, index) => {
                 return <Item data={data} item={item} key={index} />;

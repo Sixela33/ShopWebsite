@@ -4,7 +4,11 @@
     background: #1abc9c;
     color: white;
     font-size: 1.2rem;
+    text-align: start;
   }
+.logo {
+  float: left;
+}
 
 .item {
   text-decoration: none;
@@ -15,11 +19,17 @@
   padding: 0!important;
   color: white;
   cursor: pointer;
+
 }
 
 .balance {
   color: black;
+  float: right;
 }
+.navBarItems {
+  margin-left: 10%;
+}
+
 a {
   background-color: #1abc9c;
   border: none;

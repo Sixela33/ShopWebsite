@@ -25,32 +25,34 @@ export const NavBar = ({ data, setData }) => {
         <Link className="logo item" to="/">
           Basic Shop
         </Link>
-        <Link className="item" to="/">
-          Home
-        </Link>
-        {data ? (
-          <Link className="item" to={`/Profile/${data._id}`}>
-            Profile
+        <div className="navBarItems">
+          <Link className="item" to="/">
+            Home
           </Link>
-        ) : (
-          <span></span>
-        )}
+          {data ? (
+            <Link className="item" to={`/Profile/${data._id}`}>
+              Profile
+            </Link>
+          ) : (
+            <span></span>
+          )}
 
-        {data ? (
-          <button className="item" onClick={handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <button className="item" onClick={toggle}>
-            Login
-          </button>
-        )}
-        {data ? (
-          <button className="item balance">Balance: {data.balance}</button>
-        ) : (
-          <div />
-        )}
+          {data ? (
+            <button className="item" onClick={handleLogout}>
+              Logout
+            </button>
+          ) : (
+            <button className="item" onClick={toggle}>
+              Login
+            </button>
+          )}
+        </div>
       </div>
+      {data ? (
+        <button className="item balance">Balance: {data.balance} Coins</button>
+      ) : (
+        <div />
+      )}
     </nav>
   );
 };

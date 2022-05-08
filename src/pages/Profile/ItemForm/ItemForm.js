@@ -11,6 +11,7 @@ export const ItemForm = ({ data }) => {
   const username = data.displayName;
   const OwnerId = data._id;
 
+  // Checking the values sent by the user and sends the post request to the server
   const handleSubmit = async (thingy) => {
     thingy = { ...thingy, username, OwnerId };
     if (!thingy.username) {
@@ -54,6 +55,7 @@ export const ItemForm = ({ data }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  //Form that handles the cretion of items
   return (
     <form>
       <h1>Post an Item</h1>

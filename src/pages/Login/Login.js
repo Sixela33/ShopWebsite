@@ -3,6 +3,7 @@ import "./Login.css";
 import GoogleLogin from "react-google-login";
 
 export const Login = ({ data, setData }) => {
+  // sends login request to the backend
   const handleSuccess = async (response) => {
     console.log(response);
     const res = await fetch("auth/google", {

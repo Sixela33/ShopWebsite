@@ -40,6 +40,7 @@ export const Item = ({ item, data }) => {
       },
     }).then((res) => res.json());
 
+    // If error, a warning is displayed
     if (response.error) {
       setContent(<h1>{response.error}</h1>);
       toggle();
@@ -54,6 +55,7 @@ export const Item = ({ item, data }) => {
     toggle();
   };
 
+  //Item display
   return (
     <>
       <Modal active={active} toggle={toggle}>
