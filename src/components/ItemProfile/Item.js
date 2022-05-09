@@ -61,7 +61,7 @@ export const Item = ({ item, data }) => {
       <Modal active={active} toggle={toggle}>
         <span>{content}</span>
       </Modal>
-      <div className="itemBanner">
+      <td>
         <img
           src={item.displayImage}
           width="100px"
@@ -69,24 +69,35 @@ export const Item = ({ item, data }) => {
           alt=""
           className="ItemPicture"
         ></img>
+      </td>
+      <td>
         <span className="title itemData">{item.displayName}</span>
-        <br></br>
+      </td>
+      <td>
         <span className="desctiption itemData">{item.description}</span>
-        <br />
-        <span className="priceTag itemData">Value: {item.price} Coins</span>
+      </td>
+      <td>
+        <span className="priceTag itemData">{item.price} Coins</span>
+      </td>
+      <td>
         <span className="Owner itemData">
           Owner:{" "}
           <Link to={`/Profile/${item.ownerID}`}>{item.ownerUsername}</Link>
         </span>
-        <br></br>
+      </td>
+      <td>
         {data._id == item.ownerID ? (
           <span className="itemData">
-            <button onClick={() => removeItem(item._id)}>Remove</button>
-            <button onClick={() => editItem()}>Edit</button>
+            <button className="button--1" onClick={() => removeItem(item._id)}>
+              Remove
+            </button>
+            <button className="button--1" onClick={() => editItem()}>
+              Edit
+            </button>
           </span>
         ) : (
           <button
-            className="itemData buyButton"
+            className="itemData buyButton button--1"
             onClick={() => {
               buyItem(item._id, data._id);
             }}
@@ -94,7 +105,7 @@ export const Item = ({ item, data }) => {
             Buy
           </button>
         )}
-      </div>
+      </td>
     </>
   );
 };

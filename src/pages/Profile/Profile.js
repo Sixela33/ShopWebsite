@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./profile.css";
-import { Item } from "../../components/ItemProfile/Item";
+import { ItemDisplay } from "../../components/ItemDisplay/ItemDisplay";
 import { UserInfo } from "./UserInfo/UserInfo";
 import { ItemForm } from "./ItemForm/ItemForm";
 import { useParams } from "react-router-dom";
 import { NotFound } from "../NotFound/NotFound";
 
 export const Profile = ({ data }) => {
-  // Gets the user that the page should be loading
   const { id } = useParams();
   const [profileInfo, setProfileInfo] = useState();
 
-  //fetches the user's data from the backend
+  // Fetches the user's data from the backend
+  // Returns 2 Dicts, one with the user information and other with his products
   const getUserData = async () => {
     var info = await fetch(`/items/${id}`);
     info = await info.json();
@@ -25,8 +25,6 @@ export const Profile = ({ data }) => {
     getUserData();
   }, []);
 
-  // IF the app has the profile info, it renders it
-  //If not, the "Not found page is shown"
   if (profileInfo) {
     return (
       <>
@@ -36,11 +34,7 @@ export const Profile = ({ data }) => {
             {data ? <ItemForm data={data} /> : <span></span>}
 
             <h1>User Items</h1>
-            <div>
-              {profileInfo.items.map((item, index) => {
-                return <Item data={data} item={item} key={index} />;
-              })}
-            </div>
+            <ItemDisplay itemList={profileInfo.items} data={data} />
           </div>
         </div>
       </>

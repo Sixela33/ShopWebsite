@@ -95,7 +95,9 @@ export const ItemForm = ({ data }) => {
         onChange={handleChange}
       ></input>
       <br></br>
-      <button onClick={() => handleSubmit(form)}>Create Item</button>
+      <button className="button--1" onClick={() => handleSubmit(form)}>
+        Create Item
+      </button>
     </form>
   );
 };

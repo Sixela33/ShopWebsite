@@ -4,15 +4,13 @@
 
 .user-info {
     width: 33%;
-    height: 100vh;
     float:left;
     text-align: center;
 }
 
-.items {
-    width:76%
+.form {
+   text-align: left;
 }
-
 @media (max-width :800px) {
     .user-info{
         width: 100%;

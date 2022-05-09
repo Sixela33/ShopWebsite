@@ -1,0 +1,21 @@
+.itemBanner {
+    max-width: 100vw;
+}
+
+table, th, td {
+    border: 1px solid;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+td {
+    padding-bottom: 15px;
+    width: 17vw;
+}
+
+
+thead tr td {
+    font-weight: bold;
+    
+}
+

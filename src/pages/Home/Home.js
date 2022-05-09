@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Item } from "../../components/ItemProfile/Item";
+import { ItemDisplay } from "../../components/ItemDisplay/ItemDisplay";
 import "./Home.css";
 
 export const Home = ({ data }) => {
@@ -26,11 +26,7 @@ export const Home = ({ data }) => {
         <h1>Welcome to the Shop!</h1>
         <p>Check the Latest items</p>
         {posts ? (
-          posts.items.map((item, index) => {
-            return (
-              <Item className="HomeItem" data={data} item={item} key={index} />
-            );
-          })
+          <ItemDisplay data={data} itemList={posts.items} />
         ) : (
           <span></span>
         )}

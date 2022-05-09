@@ -1,36 +1,7 @@
-.itemBanner {
-    display: flex;
-    border: .5px solid black;
-}
-
-.itemData {
-
-    width: 20%;
-    margin: auto ;
-
-}
 .title {
     font-weight: bold;
 }
 .priceTag {
-
     color:blue
 }
-a {
-    background-color: transparent;
-    padding: 0px;
-    text-decoration: underline;
-    color: #0645AD;
-}
 
-a:hover {
-    background-color: transparent;
-}
-a:active {
-    color:#800080
-}
-
-.buyButton {
-    margin:10px;
-    max-width: 60px;
-}

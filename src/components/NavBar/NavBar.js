@@ -49,7 +49,7 @@ export const NavBar = ({ data, setData }) => {
         </div>
       </div>
       {data ? (
-        <button className="item balance">Balance: {data.balance} Coins</button>
+        <button className="balance">Balance: {data.balance} Coins</button>
       ) : (
         <div />
       )}
