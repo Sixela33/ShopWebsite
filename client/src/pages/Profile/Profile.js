@@ -15,7 +15,6 @@ export const Profile = ({ data }) => {
   const getUserData = async () => {
     var info = await fetch(`/items/${id}`);
     info = await info.json();
-    console.log("info", info);
     if (info.success === false) {
       info = null;
     }

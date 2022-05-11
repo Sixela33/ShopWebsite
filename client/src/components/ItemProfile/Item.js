@@ -43,6 +43,7 @@ export const Item = ({ item, data, setLoginData }) => {
       toggle();
       return;
     }
+
     window.localStorage.setItem("loginData", JSON.stringify(response.buyer));
     window.location.reload(false);
   };
