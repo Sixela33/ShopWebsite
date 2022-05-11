@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Modal from "../../Modal";
 import { ModifyItem } from "./ModifyItem/ModifyItem";
 
-export const Item = ({ item, data }) => {
+export const Item = ({ item, data, setLoginData }) => {
   const [active, setActive] = useState(false);
   const [content, setContent] = useState(<div></div>);
 
@@ -40,6 +40,7 @@ export const Item = ({ item, data }) => {
       },
     }).then((res) => res.json());
 
+    console.log("respunesta", response);
     // If error, a warning is displayed
     if (response.error) {
       setContent(<h1>{response.error}</h1>);
@@ -48,6 +49,7 @@ export const Item = ({ item, data }) => {
     }
     console.log(response);
     window.location.reload(false);
+    localStorage.setItem("loginData", JSON.stringify(response.buyer));
   };
 
   const editItem = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ItemDisplay } from "../../components/ItemDisplay/ItemDisplay";
 import "./Home.css";
 
-export const Home = ({ data }) => {
+export const Home = ({ data, setLoginData }) => {
   const [posts, setPosts] = useState(null);
 
   // Gets all items (will make so htat it asks by batches)
@@ -26,7 +26,11 @@ export const Home = ({ data }) => {
         <h1>Welcome to the Shop!</h1>
         <p>Check the Latest items</p>
         {posts ? (
-          <ItemDisplay data={data} itemList={posts.items} />
+          <ItemDisplay
+            data={data}
+            itemList={posts.items}
+            setLoginData={setLoginData}
+          />
         ) : (
           <span></span>
         )}

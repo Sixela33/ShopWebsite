@@ -13,9 +13,11 @@ td {
     width: 17vw;
 }
 
-
 thead tr td {
     font-weight: bold;
     
 }
 
+thead {
+    background-color: aquamarine;
+}

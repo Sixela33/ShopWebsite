@@ -2,7 +2,6 @@ const User = require("../db/models/User");
 const { OAuth2Client } = require("google-auth-library");
 
 const client = new OAuth2Client(process.env.REACT_APP_GOOGLE_CLIENT_ID);
-
 // Handling Google login
 const loginFunction = async (req, res) => {
   try {
@@ -14,10 +13,10 @@ const loginFunction = async (req, res) => {
 
     const data = ticket.payload;
     const user = await checkUser(data);
-    res.status(201).send(user);
+    res.status(201).send({ success: true, user });
   } catch (err) {
-    console.log(err);
-    res.status(404).send({ success: false });
+    console.log("Error: " + err);
+    res.status(404).send({ success: false, error: err });
   }
 };
 

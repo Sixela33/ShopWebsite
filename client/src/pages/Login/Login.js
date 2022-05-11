@@ -16,8 +16,14 @@ export const Login = ({ data, setData }) => {
       },
     });
     const data = await res.json();
-    setData(data);
-    localStorage.setItem("loginData", JSON.stringify(data));
+
+    if (data.success) {
+      console.log(data.user);
+
+      setData(data.user);
+
+      window.localStorage.setItem("loginData", JSON.stringify(data));
+    }
   };
 
   const handleFailure = (response) => {
@@ -26,7 +32,7 @@ export const Login = ({ data, setData }) => {
 
   const handleLogout = () => {
     setData(null);
-    localStorage.removeItem("loginData");
+    window.localStorage.removeItem("loginData");
   };
 
   return (

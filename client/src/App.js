@@ -7,8 +7,8 @@ import { Profile } from "./pages/Profile/Profile";
 
 function App() {
   const [loginData, setLoginData] = useState(
-    localStorage.getItem("loginData")
-      ? JSON.parse(localStorage.getItem("loginData"))
+    window.localStorage.getItem("loginData")
+      ? JSON.parse(window.localStorage.getItem("loginData"))
       : null
   );
 
@@ -16,10 +16,14 @@ function App() {
     <>
       <NavBar data={loginData} setData={setLoginData} />
       <Routes>
-        <Route exact path="/" element={<Home data={loginData} />}></Route>
+        <Route
+          exact
+          path="/"
+          element={<Home data={loginData} setLoginData={setLoginData} />}
+        ></Route>
         <Route
           path="/Profile/:id"
-          element={<Profile data={loginData} />}
+          element={<Profile data={loginData} setLoginData={setLoginData} />}
         ></Route>
       </Routes>
     </>
