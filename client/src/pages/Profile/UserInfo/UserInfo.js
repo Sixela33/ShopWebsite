@@ -1,8 +1,6 @@
 import React from "react";
 
 export const UserInfo = ({ userData }) => {
-  console.log(userData.image);
-
   return (
     <div className="user-info">
       <img

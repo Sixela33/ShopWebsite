@@ -21,6 +21,9 @@ const ItemSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  lastPrice: {
+    type: Number,
+  },
   displayImage: {
     type: String,
     default:

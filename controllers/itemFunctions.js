@@ -85,6 +85,7 @@ const buyItem = async (req, res) => {
       // makes modifications (Changes ownership and currency) and saves them
       buyer.balance -= item.price;
       seller.balance += item.price;
+      item.lastPrice = item.price;
       item.ownerID = buyer._id;
       item.ownerUsername = buyer.displayName;
 

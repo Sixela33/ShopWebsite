@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./profile.css";
 import { ItemDisplay } from "../../components/ItemDisplay/ItemDisplay";
 import { UserInfo } from "./UserInfo/UserInfo";
-import { ItemForm } from "./ItemForm/ItemForm";
+import { ItemForm } from "../../components/ItemForm/ItemForm";
 import { useParams } from "react-router-dom";
 import { NotFound } from "../NotFound/NotFound";
 
@@ -15,6 +15,7 @@ export const Profile = ({ data }) => {
   const getUserData = async () => {
     var info = await fetch(`/items/${id}`);
     info = await info.json();
+    console.log("info", info);
     if (info.success === false) {
       info = null;
     }

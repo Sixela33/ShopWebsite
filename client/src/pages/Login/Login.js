@@ -5,7 +5,6 @@ import GoogleLogin from "react-google-login";
 export const Login = ({ data, setData }) => {
   // sends login request to the backend
   const handleSuccess = async (response) => {
-    console.log(response);
     const res = await fetch("auth/google", {
       method: "POST",
       body: JSON.stringify({
@@ -16,13 +15,9 @@ export const Login = ({ data, setData }) => {
       },
     });
     const data = await res.json();
-
     if (data.success) {
-      console.log(data.user);
-
       setData(data.user);
-
-      window.localStorage.setItem("loginData", JSON.stringify(data));
+      window.localStorage.setItem("loginData", JSON.stringify(data.user));
     }
   };
 

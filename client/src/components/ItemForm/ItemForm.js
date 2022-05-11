@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ItemForm.css";
+import "./ItemForm";
 
 export const ItemForm = ({ data }) => {
   const [form, setForm] = useState({});
@@ -43,9 +43,9 @@ export const ItemForm = ({ data }) => {
         "Content-Type": "application/json",
       },
     });
+    window.location.reload(false);
     const information = await res.json();
     console.log("Item Created Successfully", information);
-    window.location.reload(false);
   };
 
   const handleChange = (e) => {

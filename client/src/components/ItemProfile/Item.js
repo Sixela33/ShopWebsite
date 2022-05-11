@@ -18,10 +18,7 @@ export const Item = ({ item, data, setLoginData }) => {
 
   // Calls to the backend
   const removeItem = async (id) => {
-    const response = await fetch(`/items/${id}`, { method: "DELETE" }).then(
-      (res) => res.json()
-    );
-    console.log(response);
+    await fetch(`/items/${id}`, { method: "DELETE" }).then((res) => res.json());
     window.location.reload(false);
   };
 
@@ -40,16 +37,14 @@ export const Item = ({ item, data, setLoginData }) => {
       },
     }).then((res) => res.json());
 
-    console.log("respunesta", response);
     // If error, a warning is displayed
     if (response.error) {
       setContent(<h1>{response.error}</h1>);
       toggle();
       return;
     }
-    console.log(response);
+    window.localStorage.setItem("loginData", JSON.stringify(response.buyer));
     window.location.reload(false);
-    localStorage.setItem("loginData", JSON.stringify(response.buyer));
   };
 
   const editItem = () => {
@@ -80,6 +75,9 @@ export const Item = ({ item, data, setLoginData }) => {
       </td>
       <td>
         <span className="priceTag itemData">{item.price} Coins</span>
+        <p className="lastPrice">
+          Last Price: {item.lastPrice ? item.lastPrice : "N/A"}
+        </p>
       </td>
       <td>
         <span className="Owner itemData">

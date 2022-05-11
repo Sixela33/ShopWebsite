@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Modal from "../../Modal";
 import { Login } from "../../pages/Login/Login";
+import { FaBars } from "react-icons/fa";
 
 export const NavBar = ({ data, setData }) => {
   const [active, setActive] = useState(false);
+  const [showMobileMenu, modifyMobilMenu] = useState(false);
 
   const handleLogout = () => {
     localStorage.removeItem("loginData");
@@ -15,6 +17,9 @@ export const NavBar = ({ data, setData }) => {
   const toggle = () => {
     setActive(!active);
   };
+
+  console.log("data", data);
+
   return (
     <nav>
       <Modal active={active} toggle={toggle}>
@@ -22,19 +27,34 @@ export const NavBar = ({ data, setData }) => {
       </Modal>
 
       <div className="header">
-        <Link className="logo item" to="/">
-          Basic Shop
-        </Link>
-        <div className="navBarItems">
-          <Link className="item" to="/">
+        <a className="logo" href="/">
+          The Newtork
+        </a>
+        <FaBars
+          className="bars"
+          onClick={() => {
+            modifyMobilMenu(!showMobileMenu);
+          }}
+        />
+        <div
+          className={
+            showMobileMenu ? "navBarItems active" : "navBarItems closed"
+          }
+        >
+          <NavLink className="item" activeclassname="active" to="/">
             Home
-          </Link>
+          </NavLink>
+
           {data ? (
-            <Link className="item" to={`/Profile/${data._id}`}>
+            <NavLink
+              className="item"
+              activeclassname="active"
+              to={`/Profile/${data._id}`}
+            >
               Profile
-            </Link>
+            </NavLink>
           ) : (
-            <span></span>
+            <></>
           )}
 
           {data ? (
@@ -48,10 +68,11 @@ export const NavBar = ({ data, setData }) => {
           )}
         </div>
       </div>
+
       {data ? (
         <button className="balance">Balance: {data.balance} Coins</button>
       ) : (
-        <div />
+        <></>
       )}
     </nav>
   );

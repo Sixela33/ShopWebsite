@@ -11,13 +11,14 @@
 .form {
    text-align: left;
 }
-@media (max-width :800px) {
+
+@media (max-width :960px) {
     .user-info{
         width: 100%;
         height: auto;
         float: none;}
 
-        .items {
-            width: 99%;
-        }
+    .items {
+        width: 99%;
+    }
 }

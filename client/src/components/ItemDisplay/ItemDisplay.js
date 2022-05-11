@@ -3,7 +3,6 @@ import { Item } from "../ItemProfile/Item";
 import "./ItemDisplay.css";
 
 export const ItemDisplay = ({ itemList, data, setLoginData }) => {
-  console.log(itemList);
   return (
     <div className="itemBanner">
       <table>
@@ -20,13 +19,8 @@ export const ItemDisplay = ({ itemList, data, setLoginData }) => {
         <tbody>
           {itemList.map((item, index) => {
             return (
-              <tr>
-                <Item
-                  data={data}
-                  item={item}
-                  key={index}
-                  setLoginData={setLoginData}
-                />
+              <tr key={index}>
+                <Item data={data} item={item} setLoginData={setLoginData} />
               </tr>
             );
           })}

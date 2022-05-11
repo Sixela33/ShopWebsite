@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
@@ -11,6 +11,14 @@ function App() {
       ? JSON.parse(window.localStorage.getItem("loginData"))
       : null
   );
+
+  useEffect(() => {
+    setLoginData(
+      window.localStorage.getItem("loginData")
+        ? JSON.parse(window.localStorage.getItem("loginData"))
+        : null
+    );
+  }, []);
 
   return (
     <>

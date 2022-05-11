@@ -23,8 +23,8 @@ export const Home = ({ data, setLoginData }) => {
   return (
     <>
       <div className="container">
-        <h1>Welcome to the Shop!</h1>
-        <p>Check the Latest items</p>
+        <h1>Welcome to the Network!</h1>
+        <p>Check the Latest posts</p>
         {posts ? (
           <ItemDisplay
             data={data}
