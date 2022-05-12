@@ -7,17 +7,39 @@ table, th, td {
     padding: 10px;
     border-collapse: collapse;
 }
-
+thead {
+    background-color: aquamarine;
+}
+thead tr td {
+    font-weight: bold;
+    
+}
+tbody td:nth-child(even) {
+    background-color: rgb(206, 238, 206);
+}
 td {
     padding-bottom: 15px;
     width: 17vw;
 }
 
-thead tr td {
-    font-weight: bold;
-    
+
+@media(max-width:500px){
+    thead {
+        display: none;
+    }
+    table, tbody, tr, td {
+        display: block;
+        width: 100%;
+        border: none;
+    }
+
+    table tr td {
+        border: 1px solid;
+    }
+
+    table tr {
+        margin-bottom: 15px;
+    }
 }
 
-thead {
-    background-color: aquamarine;
-}
+

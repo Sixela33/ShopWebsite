@@ -5,7 +5,7 @@ import "./ItemDisplay.css";
 export const ItemDisplay = ({ itemList, data, setLoginData }) => {
   return (
     <div className="itemBanner">
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <td>Image</td>

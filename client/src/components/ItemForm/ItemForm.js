@@ -43,7 +43,10 @@ export const ItemForm = ({ data }) => {
         "Content-Type": "application/json",
       },
     });
-    window.location.reload(false);
+
+    window.history.replace({
+      search: "",
+    });
     const information = await res.json();
     console.log("Item Created Successfully", information);
   };

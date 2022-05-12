@@ -45,10 +45,13 @@ const styles = {
     zIndex: 10,
     minWidth: 320,
   },
-  closeBtn: {
+  closeButton: {
     position: "absolute",
     top: 0,
     right: 0,
+    background: "transparent",
+    border: "none",
+    fontSize: "1.3rem",
   },
   background: {
     position: "absolute",

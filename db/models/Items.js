@@ -26,8 +26,6 @@ const ItemSchema = new mongoose.Schema({
   },
   displayImage: {
     type: String,
-    default:
-      "https://i.pinimg.com/474x/a2/9f/71/a29f71faadeaa79a8b67919c81d5b767.jpg",
   },
 });
 
