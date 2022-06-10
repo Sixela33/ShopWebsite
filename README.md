@@ -5,7 +5,7 @@ A Social Network Built with React and Express
 I made this project to demostrate my Javascript skills.
 The webpage begun as a E-commerce website but while I was developing it I got the idea of a social network where the users could trade their posts between each other.
 
-The website is functional and it does evrything I planned and more, I didn't emphasize in UX Design because I'm not very good at it, but the webpage is fully responsive.
+The website is functional and it does evrything I planned and more, I didn't emphasize in UX Design because I'm not very good at it hehe, but the webpage is fully responsive.
 
 <ins>Check It out!:</ins> https://tdnetwork.herokuapp.com/
 
