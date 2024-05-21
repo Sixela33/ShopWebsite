@@ -61,25 +61,17 @@ TradeNetwork is a social networking platform where users can trade posts with ea
 
 ### User Routes
 
-- `PATCH /users/:id`
-  - Add money to a user's account.
+ - **PATCH /users/:id** Add money to a user's account.
 
 ### Item Routes
 
-- `POST /items`
-  - Create a new item.
-- `GET /items`
-  - Retrieve all items.
-- `PATCH /items`
-  - Modify an item.
-- `GET /items/:id`
-  - Get profile information for a specific item.
-- `DELETE /items/:id`
-  - Delete a specific item.
-- `PATCH /items/:id`
-  - Buy a specific item.
+- **POST /items** Create a new item.
+- **GET /items** Retrieve all items.
+- **PATCH /items** Modify an item if the user is the owner.
+- **GET /items/:id** Get information for a specific item.
+- **DELETE /items/:id** Delete a specific item if the user is the owner.
+- **PATCH /items/:id** try to buy a specific item, it will revert if user dosent have enough balance.
 
 ### Authentication Routes
 
-- `POST /auth/google`
-  - Authenticate user using Google OAuth.
+- **POST /auth/google** Authenticate user using Google OAuth.
